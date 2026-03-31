@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("--- Go Number Base Converter ---")
 	fmt.Println("Usage: <number> <base> (e.g., '10 dec', 'FF hex', '1010 bin')")
@@ -43,7 +42,6 @@ func main() {
 
 		switch baseStr {
 		case "dec":
-
 			val, err := strconv.ParseInt(numberStr, 10, 64)
 			if err != nil {
 				fmt.Println("Invalid decimal:", err)
@@ -53,7 +51,6 @@ func main() {
 			fmt.Printf("✦ Hex:     %X\n", val)
 
 		case "hex":
-
 			val, err := strconv.ParseInt(numberStr, 16, 64)
 			if err != nil {
 				fmt.Println("Invalid hex:", err)
@@ -62,7 +59,6 @@ func main() {
 			fmt.Printf("✦ Decimal: %d\n", val)
 
 		case "bin":
-
 			if !isValidBinary(numberStr) {
 				fmt.Println("Invalid binary: contains non-binary digits")
 				continue
